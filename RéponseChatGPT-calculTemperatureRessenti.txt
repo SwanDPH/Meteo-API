@@ -1,0 +1,15 @@
+La température ressentie, également appelée indice de chaleur, est une mesure de la sensation de chaleur ou de froid ressentie par une personne, en fonction de plusieurs facteurs tels que la température de l'air, l'humidité, le vent et la radiation solaire. La formule de calcul de l'indice de chaleur varie selon les pays, mais en général, elle prend en compte les facteurs suivants:
+
+La température de l'air en degrés Celsius (°C).
+L'humidité relative de l'air en pourcentage (%).
+La vitesse du vent en mètres par seconde (m/s) ou en kilomètres par heure (km/h).
+Voici un exemple de formule utilisée pour calculer l'indice de chaleur:
+
+Indice de chaleur = -8,785 + 1,611 x T + 2,013 x H - 0,126 x T x H + 0,002 x T² + 0,00083 x H²
+où T est la température en degrés Celsius et H est l'humidité relative en pourcentage.
+
+Cette formule est utilisée aux États-Unis et est basée sur une unité de mesure en degrés Fahrenheit (°F). Elle peut être convertie en degrés Celsius en utilisant la formule suivante:
+
+T(°C) = (T(°F) - 32) x 5/9
+
+Il est important de noter que l'indice de chaleur n'est pas une mesure de la température réelle de l'air, mais plutôt une mesure de la sensation de chaleur ou de froid ressentie par une personne. Les personnes ayant des problèmes de santé, telles que les personnes âgées, les nourrissons, les personnes atteintes de maladies chroniques ou les personnes travaillant à l'extérieur, doivent prendre des précautions supplémentaires par temps chaud pour éviter la déshydratation, les coups de chaleur et les autres problèmes de santé liés à la chaleur.
