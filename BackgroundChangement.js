@@ -16,6 +16,7 @@ function recuperationTemperature(villeSelectionee) {
         console.log(requete)
         if (requete.readyState == XMLHttpRequest.DONE) {
             if (requete.status === 200) {
+
                 let ville = requete.response.name
 
                 let degres = requete.response.main.temp - 273.15
@@ -25,10 +26,10 @@ function recuperationTemperature(villeSelectionee) {
 
                 // plus de détails sur la ville
                 let degresMax = requete.response.main.temp_max - 273.15
-                let degresMaxConvert = degresMax.toFixed(2)
+                let degresMaxConvert = degresMax.toFixed(2)+ "°"
 
                 let degresMin = requete.response.main.temp_min - 273.15
-                let degresMinConvert = degresMin.toFixed(2)
+                let degresMinConvert = degresMin.toFixed(2)+ "°"
 
                 // Afficher la temperature
                 let affichageTemperature = document.getElementById('degres')
@@ -42,6 +43,11 @@ function recuperationTemperature(villeSelectionee) {
                 let affichagePays = document.getElementById('pays')
                 affichagePays.textContent = country
 
+
+                let affichageDegresMin = document.getElementById('tempMin')
+                let affichageDegresMax = document.getElementById('tempMax')
+                affichageDegresMin.textContent = degresMinConvert
+                affichageDegresMax.textContent = degresMaxConvert
 
                 
             } else {
