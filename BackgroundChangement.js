@@ -1,6 +1,8 @@
 let backgroundOk = document.querySelector(".background")
 let buttonVille = document.querySelector(".buttonVille")
 let ville = "Paris"
+let boutonPlusDetail = document.querySelector("#plusDeDetail")
+let zonePlusDetail = document.querySelector(".zonePlusDinfo")
 
 function recuperationTemperature(villeSelectionee) {
         let APIKey = "882b65fd7aa1963755106d91651a5482"
@@ -61,6 +63,11 @@ buttonVille.addEventListener("click", () => {
     let villeSelectionee = ville
     villeSelectionee = prompt("Note le nom de la ville souhaitée :")
     recuperationTemperature(villeSelectionee)
+})
+
+boutonPlusDetail.addEventListener("click", () => {
+    console.log("kokel");
+    zonePlusDetail.style.display ="block"
 })
 
 
