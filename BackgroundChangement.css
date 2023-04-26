@@ -10,7 +10,6 @@ h1{
     display: flex;
     width: 100%;
     height: 100%;
-    background: rgb(215,192,192);
     background: linear-gradient(0deg, rgba(215,192,192,1) 22%, rgba(236,212,212,1) 100%);
     justify-content: center;
     align-items: center;
@@ -27,8 +26,7 @@ h1{
     right: -1579px;
     bottom: -50%;
     left: -50%;
-    background-color: f2f2f2;
-    /* background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0)); */
+    background-color: #f2f2f2;
     transform: rotateZ(60deg) translate(-5em, 7.5em);
     animation: refletBackground 3s ease-in-out infinite alternate-reverse;
 }
@@ -201,4 +199,15 @@ button{
 
 .infoPlus h1{
     font-size: 35px;
+}
+
+
+.temperatureFraiche{
+    background : linear-gradient(180deg, rgba(49,252,248,1) 15%, rgba(11,97,228,1) 97%);
+}
+.temperatureMedium{
+    background : linear-gradient(180deg, rgba(252,180,49,1) 15%, rgba(228,148,11,1) 97%);
+}
+.temperatureChaude{
+    background : linear-gradient(180deg, rgba(252,49,49,1) 15%, rgba(181,11,11,1) 97%);
 }

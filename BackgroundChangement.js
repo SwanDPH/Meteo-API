@@ -3,6 +3,25 @@ let buttonVille = document.querySelector(".buttonVille")
 let ville = "Paris"
 let boutonPlusDetail = document.querySelector("#plusDeDetail")
 let zonePlusDetail = document.querySelector(".zonePlusDinfo")
+let plusDeDetail = false
+
+backgroundOk.style.background = "linear-gradient(180deg, rgba(252,180,49,1) 15%, rgba(228,148,11,1) 97%);"
+
+function changementCouleurBackground(temperature) {
+    if (temperature < 10) {
+        backgroundOk.classList.remove("temperatureChaude")
+        backgroundOk.classList.remove("temperatureMedium")
+        backgroundOk.classList.add("temperatureFraiche")
+    } else if (temperature < 24) {
+        backgroundOk.classList.remove("temperatureFraiche")
+        backgroundOk.classList.remove("temperatureChaude")
+        backgroundOk.classList.add("temperatureMedium")
+    } else{
+        backgroundOk.classList.remove("temperatureFraiche")
+        backgroundOk.classList.remove("temperatureMedium")
+        backgroundOk.classList.add("temperatureChaude")
+    }
+}
 
 function recuperationTemperature(villeSelectionee) {
         let APIKey = "882b65fd7aa1963755106d91651a5482"
@@ -37,6 +56,9 @@ function recuperationTemperature(villeSelectionee) {
                 let affichageTemperature = document.getElementById('degres')
                 affichageTemperature.textContent = degresConvert
                 
+                // Changement de couleur du background en fonction de la température
+                changementCouleurBackground(degres)
+
                 // Afficher la ville
                 let affichageVille = document.querySelector('#ville')
                 affichageVille.textContent = ville
@@ -59,15 +81,33 @@ function recuperationTemperature(villeSelectionee) {
     }
 }
 
-buttonVille.addEventListener("click", () => {
+function boutonPlusDeDetailCache() {
+    if (plusDeDetail == false) {
+        boutonPlusDetail.style.display = "block"
+    } else {
+        boutonPlusDetail.style.display = "none"
+    }
+}
+function zonePlusDeDetailCache() {
+        zonePlusDetail.style.display = "none"
+}
+
+
+
+
+buttonVille.addEventListener("click", function () {
+    zonePlusDeDetailCache()
     let villeSelectionee = ville
     villeSelectionee = prompt("Note le nom de la ville souhaitée :")
+    plusDeDetail = false
+    boutonPlusDeDetailCache()
     recuperationTemperature(villeSelectionee)
 })
 
-boutonPlusDetail.addEventListener("click", () => {
-    console.log("kokel");
-    zonePlusDetail.style.display ="block"
+boutonPlusDetail.addEventListener("click", function () {
+    plusDeDetail = true
+    boutonPlusDeDetailCache()
+    zonePlusDetail.style.display = "block"
 })
 
 
