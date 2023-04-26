@@ -4,8 +4,11 @@ let ville = "Paris"
 let boutonPlusDetail = document.querySelector("#plusDeDetail")
 let zonePlusDetail = document.querySelector(".zonePlusDinfo")
 let plusDeDetail = false
+let dateAujourdhui = new Date()
+let jourAujourdui = dateAujourdhui.getDate()
+let moisAujourdui = dateAujourdhui.getMonth()+1
+let yearAujourdui = dateAujourdhui.getFullYear()
 
-backgroundOk.style.background = "linear-gradient(180deg, rgba(252,180,49,1) 15%, rgba(228,148,11,1) 97%);"
 
 function changementCouleurBackground(temperature) {
     if (temperature < 10) {
@@ -105,6 +108,9 @@ buttonVille.addEventListener("click", function () {
 })
 
 boutonPlusDetail.addEventListener("click", function () {
+    let dateDuJour = document.querySelector(".dateDuJour")
+    dateDuJour.innerHTML = `${jourAujourdui}/${moisAujourdui}/${yearAujourdui}`
+    console.log(`la date du jour c'est ${jourAujourdui}/${moisAujourdui}/${yearAujourdui}`);
     plusDeDetail = true
     boutonPlusDeDetailCache()
     zonePlusDetail.style.display = "block"
